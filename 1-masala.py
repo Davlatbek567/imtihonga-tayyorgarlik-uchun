@@ -33,4 +33,20 @@ class FileRepository:
 
     def rename(self, yangi_file_nomi):
         os.rename(self.file_name, yangi_file_nomi)
-        
+
+    def search(self, stingni_qidirish):
+        with open(self.file_name, "r") as file:
+            for line in file:
+                if stingni_qidirish in line:
+                    return True
+                else:
+                    return False
+                
+    def replace(self, old_str, new_str)
+        with open(self.file_name, "r") as file:
+            lines = file.readlines()
+        with open(self.file_name, "w"):
+            for line in lines:
+                if old_str in line:
+                    file.write(line.replace(old_str,new_str))
+                    
